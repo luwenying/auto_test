@@ -1,0 +1,18 @@
+#登录信息
+- name: luwenying
+  pwd: Aa123456.
+  msg: luwenying
+  sys: 商户管理中心
+  menu: 商户管理
+  second_menu: 商户管理
+  #添加商户信息
+  merchant_name: 汇丰银行13
+  username: huangshaohui13
+  corp: 汇丰银行
+  re_name: 汇丰银行
+  telephone: 12879527798
+  #修改商户信息
+  modify_merchant_name: 汇丰银行13
+  modify_corp: 汇丰银行03
+  modify_re_name: 汇丰银行03
+  modify_telephone: 13879527797

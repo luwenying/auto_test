@@ -1,0 +1,8 @@
+- name: luwenying
+  pwd: Aa123456.
+  msg: luwenying
+  sys: 商户管理中心
+  menu: 产品管理
+  second_menu: 产品管理
+  bind_product_name: 语音质检
+  bind_merchant_name: 汇丰银行11

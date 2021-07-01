@@ -1,0 +1,5 @@
+INFO     root:login_page.py:62 登录账号：luwenying，登录密码：Aa123456.
+INFO     root:login_page.py:75 登录的系统名称为：商户管理中心
+INFO     root:login_page.py:80 进入系统截图为：F:\webUI\biz/screenshot/20210623155111进入系统截图.png
+INFO     root:merchant_page.py:50 账号username是huangshaohui13
+INFO     root:merchant_page.py:51 商户名称merchant_name汇丰银行13

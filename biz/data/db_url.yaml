@@ -1,0 +1,6 @@
+#测试网址
+url: https://admintest.robot.com/#/login
+host: "192.168.18.211"
+username: "test"
+password: "zlsdDBA@2019"
+db: "merchant"

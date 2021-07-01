@@ -1,0 +1,21 @@
+#-
+#  name: ""
+#  pwd: Aa123456.
+#  msg: 请输入账号
+#
+#- name: luwenying
+#  pwd: ""
+#  msg: 请输入密码
+#登录信息
+- name: luwenying
+  pwd: Aa123456.
+  msg: luwenying
+  sys: 商户管理中心
+  menu: 用户管理
+  second_menu: 用户管理
+  merchant_name: 商户-卿宏刚
+  username: lwy569876
+  corp: 机器人公司06
+  per_name: 啦啦啦
+  telephone: '18276207799'
+

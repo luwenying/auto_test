@@ -1,0 +1,12 @@
+#登录信息
+- name: luwenying
+  pwd: Aa123456.
+  msg: luwenying
+  sys: 商户管理中心
+  menu: 用户管理
+  second_menu: 用户管理
+  #添加用户
+  add_account: huangshaohui02
+  add_name: huangshaohui02
+  add_sys_name: 商户管理中心
+  add_role_name: 超级管理员

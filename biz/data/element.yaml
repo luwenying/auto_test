@@ -1,0 +1,74 @@
+
+#            一、登录系统
+username_loc: (By.XPATH, '//input[@placeholder="请输入账号"]')
+password_loc: (By.XPATH, '//input[@placeholder="请输入密码"]')
+login_btn_loc: (By.XPATH, '//*[@id="app"]/div/div[3]/div[2]/form/button')
+high_loc: (By.ID, "details-button")
+continue_into: (By.ID, "proceed-link")
+application_element: (By.XPATH, "//div[contains(text(),'${sys_name}')]")
+menu_element: (By.XPATH,"//span[contains(text(),'${menu}')]")
+second_menu_element: (By.XPATH, "//li[contains(text(),'${second_menu}')]")
+#           二、退出系统
+logout_name: (By.XPATH, "//span[@class='el-dropdown-link el-dropdown-selfdefine']")
+logout_element: (By.XPATH, "//li[contains(text(),'退出登录')]")
+#application_element: (By.XPATH, f"//div[contains(text(),'{sys_name}')]")
+
+#           三、商户管理中心页面元素 :商户名称、查询、重置 新建商户 重置密码 编辑
+#商户名称
+merchant_name_element: (By.XPATH,'//input[@class="el-input__inner"]')
+#查询按钮
+search_btn_element: (By.XPATH,'//span[contains(text(),"查 询")]')
+#重置按钮
+reset_btn_element: (By.XPATH,'//span[contains(text(),"重 置")]')
+#重置密码
+reset_password_element: (By.XPATH,'//span[contains(text(),"重置密码")]')
+#编辑
+modify_element: (By.XPATH,'//span[contains(text(),"编辑")]')
+#新建商户
+create_merchant_element: (By.XPATH,'//span[contains(text(),"新建商户")]')
+#创建商户需要填写的信息 商户名称、登录账号、公司全称、姓名、手机号码
+create_merchant_msg_element: (By.XPATH,'//input[@placeholder="请输入" and @class="el-input__inner"]')
+
+#         四、产品管理
+#查询元素 产品名称 商户名称 查询按钮 重置按钮
+product_btn_element: (By.XPATH,"//input[@placeholder='请选择' and @class='el-input__inner']")
+product_name_element: (By.XPATH,"//span[text()='${product_name}']")
+product_merchant_name_element: (By.XPATH,'//div[@class="el-form-item__content"]/div/input[@class="el-input__inner"]')
+product_search_element: (By.XPATH,"//span[text()='查 询']")
+#新建绑定
+create_product_element: (By.XPATH,"//span[text()='新建绑定']")
+create_product_name_element: (By.XPATH,"//span[text()='${create_product_name}']")
+new_merchant_name_element: (By.XPATH,"//span[text()='${merchant_name}']")
+
+#停用
+product_stop_element: (By.XPATH,"//span[text()='停用']")
+
+#                 五、用户管理
+#用户查询 姓名
+username_element: (By.XPATH,'//*[@id="app"]/div/div/section/div/div[2]/div[1]/form/div[1]/div/div/input')
+#账号
+user_account_element: (By.XPATH,'//*[@id="app"]/div/div/section/div/div[2]/div[1]/form/div[2]/div/div/input')
+#账号状态
+user_account_status_frame_element: (By.XPATH,'//input[@placeholder="请选择"]')
+user_account_status_element:  (By.XPATH,'//span[text()="冻结"]')
+#查询
+user_search_element: (By.XPATH,'//span[text()="查 询"]')
+#添加
+user_add_element: (By.XPATH,'//span[text()="添 加"]')
+user_freeze_element: (By.XPATH,'//span[text()="冻 结"]')
+user_unfreeze_element: (By.XPATH,'//span[text()="解 冻"]')
+#选择框
+checkbox_element: (By.XPATH,'//span[@class="el-checkbox__inner"]')
+#添加的账号、姓名、系统、角色
+add_user_account_element: (By.XPATH,'//*[@id="app"]/div/div/section/div/div[3]/div/div[2]/form/div[1]/div/div[1]/input')
+add_user_name_element: (By.XPATH,'//*[@id="app"]/div/div/section/div/div[3]/div/div[2]/form/div[2]/div/div/input')
+add_sys_frame_element: (By.XPATH,'//input[@placeholder="请选择系统"]')
+add_sys_name_element: (By.XPATH,'//span[text()="${add_sys_name}"]')
+add_role_frame_element: (By.XPATH,'//input[@placeholder="请选择角色"]')
+add_role_name_element: (By.XPATH,'//span[text()="${add_role_name}"]')
+#点击+号
+add_user_plus_element: (By.XPATH,'//*[@id="app"]/div/div/section/div/div[3]/div/div[2]/form/div[3]/div/i')
+#确认按钮
+confirm_element: (By.XPATH,'//span[text()="确认"]')
+#重置密码
+user_reset_password_element: (By.XPATH,'//span[text()="重置密码"]')
