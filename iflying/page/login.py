@@ -8,24 +8,39 @@ from iflying.get_path import *
 
 
 class Login(WebCommon):
-    data = get_yaml_data(locate_data)
+    data = get_yaml_data(login_element)
+
 
     def login(self,url):
         login_btn_element = yamlstr_to_tuple(self.data["login"]["login_btn_element"])
         self.open(url)
-        self.wait(5)
         self.click(login_btn_element)
-        self.sleep(6)
-        return Index()
+        self.sleep(8)
+        # self.write_cookies_to_file(login_cookies_data)
+        self.sleep(1)
+        return Index(self._driver)
 
     def goto_register(self):
         goto_register_element = yamlstr_to_tuple(self.data["login"]["goto_register_element"])
         self.click(goto_register_element)
         return Register()
 
+    def cookie_login(self,url):
+        self.open(url)
+        self.add_cookies(login_cookies_data)
+        return Index(self._driver)
+
+
+
+
 
 
 class Register():
     pass
+
+
+if __name__=="__main__":
+    pass
+
 
 

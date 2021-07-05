@@ -1,0 +1,19 @@
+#二级菜单
+customer_manager_element_second: (By.XPATH,'//li[text()="客户管理"]')
+# 客户搜搜
+#客户名称
+customer_name_element: (By.XPATH,'//input[@placeholder="客户"]')
+#所属客服
+customer_service_element: (By.XPATH,'//input[@placeholder="请选择所属客服"]')
+customer_service_select_element: (By.XPATH,'//span[text()="$customer_service"]')
+#性别
+customer_sex_element: (By.XPATH,'//input[@placeholder="请选择性别"]')
+customer_sex_select_element: (By.XPATH,'//span[text()="$sex"]')
+#时间控件
+start_time_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+end_time_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+confirm_element: (By.XPATH,'//span[text()="确定"]')
+#查询
+search_btn_element: (By.XPATH,'//span[text()="查询"]')
+#更新数据
+update_btn_element: (By.XPATH,'//span[text()="更新数据"]')

@@ -7,19 +7,19 @@ from public_common.read_data import get_yaml_data
 import yaml
 
 class TestLogin():
-    data = get_yaml_data(login_data)
+    data = get_yaml_data(all_data)
 
     def setup(self):
         self.driver = get_driver()
         self.login = Login(self.driver)
 
-    def teardown(self):
-        self.login.close()
+    # def teardown(self):
+    #     self.login.close()
 
     def test_login(self):
         print("登录的网址是：",self.data)
         self.login.login(self.data["url"])
 
 if __name__=="__main__":
-    data = yaml.load(open(login_data,encoding="utf-8"),Loader=yaml.FullLoader)
+    data = yaml.load(open(all_data,encoding="utf-8"),Loader=yaml.FullLoader)
     print(data["url"])

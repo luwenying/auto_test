@@ -4,7 +4,8 @@ from public_common.get_driver import get_driver
 import pytest
 
 if __name__=="__main__":
-    pytest.main(["-sv","testcase/test_customer_manage.py"])
+    #test_customer_manage
+    pytest.main(["-sv","testcase/test_language_manage.py"])
     # import shlex,subprocess
     # cmd = shlex.split("Nox.exe")
     # print(cmd)
@@ -15,5 +16,7 @@ if __name__=="__main__":
     # d = os.popen(cmd,"r")
     # print(d.read())
     # d.close()
+
+
 
 

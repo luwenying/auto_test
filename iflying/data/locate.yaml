@@ -1,5 +1,0 @@
-login:
-  #登录按钮
-  login_btn_element: (By.XPATH,'//span[text()="登录"]')
-  #去注册按钮
-  goto_register_element: (By.XPATH,'//span[text()="去注册"]')

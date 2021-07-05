@@ -1,4 +1,7 @@
 #coding:utf-8
+import json
+from string import Template
+
 import pymysql
 import yaml
 from biz.get_path import *
@@ -14,6 +17,23 @@ def get_yaml_data(file_path):
 
 def yamlstr_to_tuple(data,**args):
     return eval(repr(data).replace('\'','').replace('\\',"'"))
+
+def replace_yaml_variable(yaml_data,params:dict):
+    raw = json.dumps(yaml_data)
+    print(type(raw))
+    for key,value in params.items():
+        raw =raw.replace(f"${{{key}}}",value)
+    new_data = json.loads(raw)
+    return new_data
+
+def replace_variable(data:str,**kwargs):
+    if isinstance(data,str):
+        data = data
+    else:
+        data = json.dumps(data)
+    new_data = json.loads(Template(data).substitute(**kwargs))
+    return new_data
+
 
 def con_mysql(key,sql):
     """
@@ -48,10 +68,13 @@ def con_mysql(key,sql):
 if __name__=="__main__":
     # sql = "INSERT INTO mkt_product VALUES (1908653076194000902, 'PRODUCT_CODE', '20210618004product', 'NORMAL', '1', 1864957990774112257, 'NORMAL', '2021-06-18 09:13:54', 0, 0, '2021-06-07 09:44:57');"
     # con_mysql("insert",sql)
-    name='chenqh008'
-    select_sql = f"select * from merchant_user where account='{name}'"
-    res = con_mysql("selectone",select_sql)
-    print(res)
+    # name='chenqh008'
+    # select_sql = f"select * from merchant_user where account='{name}'"
+    # res = con_mysql("selectone",select_sql)
+    # print(res)
+
+    data = {"name":"$name","sex":"$sex"}
+    print(replace_variable(data,name="卢文英",sex="女"))
 
 
 
@@ -59,8 +82,3 @@ if __name__=="__main__":
 
 
 
-
-
-if __name__=="__main__":
-    # get_yaml_data(login_element_data)
-    pass

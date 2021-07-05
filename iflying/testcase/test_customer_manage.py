@@ -11,9 +11,17 @@ class TestCustomer():
     def setup(self):
         self.driver = get_driver()
         self.login = Login(self.driver)
-    @pytest.mark.parametrize("data",[get_yaml_data(login_data)])
-    def test_customer_manage(self,data):
+
+    @pytest.mark.parametrize("data",[get_yaml_data(all_data)])
+    def test_customer_search(self,data):
         print("-------------",data)
-        self.login.login(data["url"]).customer_manager_index()
+        self.customer = self.login.login(data["url"]).customer_manager_index()
+        self.customer.into_customer_manager()
+        customer_manage = data["customer_manage"]
+        self.customer.search_customer(customer_name=customer_manage["customer_name"],customer_service=customer_manage["customer_service"],sex=customer_manage["sex"],
+                                 start_time=customer_manage["start_time"],end_time=customer_manage["end_time"])
+
+    def test_update_customer(self):
+        self.customer.update_customer()
 
 

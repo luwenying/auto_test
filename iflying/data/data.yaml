@@ -1,0 +1,16 @@
+
+url: https://iflying-manage-dev.zhilingsd.com/#/login
+customer_manage:
+  customer_name: reminiscence
+  customer_service: another
+  sex: 女
+  start_time:
+  end_time:
+
+language_manage:
+  add_scene_name: 保险
+  add_industry_name: 测试保险-1
+  add_descript:
+  modify_scene_name: 保险01
+  modify__descript: 123
+

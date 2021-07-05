@@ -10,6 +10,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 # from biz.common.get_logger import get_logger
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 
 class WebCommon():
     _alert_list = [((By.XPATH, '//span[contains(text(),"确 认")]'), (By.XPATH, '//span[contains(text(),"取 消")]'))]
@@ -57,7 +60,8 @@ class WebCommon():
             loc: WebElement
             loc.click()
         else:
-            self.locate(loc,value).click()
+            element = self.locate(loc,value)
+            element.click()
 
     def input(self,txt,loc,value=None):
         if isinstance(loc,WebElement):
@@ -137,9 +141,8 @@ class WebCommon():
 
             # raise e
 
-
     def cancel(self):
-        # 取消按钮
+        # 取消按钮！！
         concel_element = (By.XPATH, '//span[contains(text(),"取 消")]')
         self.click(concel_element)
 
@@ -165,14 +168,26 @@ class WebCommon():
             content = f.read()
             allure.attach(content,attachment_type=allure.attachment_type.PNG)
 
-    def replace_yaml_variable(self,yaml_data,params:dict):
-        raw = json.dumps(yaml_data)
-        print(type(raw))
-        for key,value in params.items():
-            raw =raw.replace(f"${{{key}}}",value)
-        new_data = json.loads(raw)
-        return new_data
 
+
+    def wait_element_visible(self,locator,time:int=None):
+        if time==None:
+            time = 10
+        WebDriverWait(self._driver,time).until(expected_conditions.visibility_of_element_located(locator))
+
+    def add_cookies(self,path):
+        #从文件中加载cookies
+        with open(path,"r",encoding="utf-8") as f:
+            cookies = json.loads(f.read())
+            for cookie in cookies:
+                self._driver.add_cookie(cookie)
+            self._driver.refresh()
+
+    def write_cookies_to_file(self,path):
+        cookies = self._driver.get_cookies()
+        with open(path,"w",encoding="utf-8")as f:
+            for cookie in cookies:
+                f.write(json.dumps(cookie)+"\n")
 
 
 

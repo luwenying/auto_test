@@ -1,0 +1,11 @@
+login:
+  #登录按钮
+  login_btn_element: (By.XPATH,'//span[text()="登录"]')
+  #去注册按钮
+  goto_register_element: (By.XPATH,'//span[text()="去注册"]')
+
+menu:
+  customer_manager_element: (By.XPATH,'//span[text()="客户管理"]')
+  language_manage_element: (By.XPATH,'//span[text()="话术管理"]')
+  corp_manage_element: (By.XPATH,'//span[text()="企业管理"]')
+

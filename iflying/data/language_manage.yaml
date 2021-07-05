@@ -1,0 +1,36 @@
+#二级菜单
+language_manage_element_second: (By.XPATH,'//li[text()="话术管理"]')
+#新增话术
+add_scene_element: (By.XPATH,'//div[text()="新增场景"]')
+add_scene_name_element: (By.XPATH,'//input[@placeholder="场景名称"]')
+add_industry_name_element: (By.XPATH,'//input[@placeholder="请选择行业"]')
+add_industry_name_select_element: (By.XPATH,'//span[text()="$add_industry_name"]')
+add_descript_element: (By.XPATH,'//textarea[@placeholder="描述"]')
+confirm_element: (By.XPATH,'//span[text()="确 定" or text()="确定"]')
+#编辑话术
+modify_element: (By.XPATH,'//span[text()="编辑"]')
+scene_enable_or_disable_element: (By.XPATH,'//div[@class="el-switch__action"]')
+#更多
+more_element:  (By.XPATH,'//span[contains(text(),"更多")]')
+#删除场景
+del_scene_element: (By.XPATH,'//li[contains(text(),"删除场景")]')
+#进入话术配置
+into_language_element: (By.XPATH,'//li[contains(text(),"配置话术")]')
+#新增话术
+add_language_btn_element: (By.XPATH,'//span[text()="新增"]')
+add_question_element: (By.XPATH,'//textarea[@placeholder="请输入，100字以内"]')
+add_intention_frame_element: (By.XPATH,'//input[@placeholder="请选择意图"]')
+add_intention_element: (By.XPATH,'//span[text()="$add_intention"]')
+add_answer_element: (By.XPATH,'//textarea[@placeholder="请输入，200字以内"]')
+add_start_time_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+add_end_time_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+add_answer_btn_element: (By.XPATH,'//span[text()="添加答案"]')
+#编辑话术
+modify_language_btn_element: (By.XPATH,'//tr[@class="el-table__row"]//span[text()="编辑"]')
+#查询话术
+search_question_element: (By.XPATH,'//input[@placeholder="标准问"]')
+search_status_frame_element: (By.XPATH,'//input[@placeholder="请选择启用状态"]')
+search_status_element: (By.XPATH,'//li[@class="el-select-dropdown__item"]/span[text()="$status"]')
+search_source_frame_element: (By.XPATH,'//input[@placeholder="请选择来源"]')
+search_source_element: (By.XPATH,'//li[@class="el-select-dropdown__item"]/span[text()="$source"]')
+search_btn_element: (By.XPATH,'//span[text()="查询"]')
