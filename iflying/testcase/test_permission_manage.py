@@ -35,4 +35,9 @@ class TestPermissionManage():
         self.permission_manage.modify_role(modify_role_name,modify_role_data_scope,modify_role_menu,modify_role_descript,modify_search_role_name)
 
 
+    def test_role_search(self):
+        search_role_name = self.permission_manage_data["search_role_name"]
+        self.permission_manage.search_role(search_role_name)
+
+
 

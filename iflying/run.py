@@ -5,7 +5,7 @@ import pytest
 
 if __name__=="__main__":
     #test_customer_manage
-    pytest.main(["-sv","testcase/test_language_manage.py"])
+    pytest.main(["-sv","testcase/test_customer_manage.py"])
     # import shlex,subprocess
     # cmd = shlex.split("Nox.exe")
     # print(cmd)

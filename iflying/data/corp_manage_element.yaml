@@ -6,8 +6,8 @@ permission_manage_menu_element: (By.XPATH,'//li[text()="权限管理"]')
 username_element: (By.XPATH,'//input[@placeholder="成员名称"]')
 search_btn_element: (By.XPATH,'//span[text()="查询"]')
 #同步
-user_synchronize_element: (By.XPATH,'//span[contains(text(),"同步")]')
-#管理权限
+user_synchronize_element: (By.XPATH,'//span[text()=" 同步 "]')
+#管理权限步
 set_user_permissin_element: (By.XPATH,'//span[text()=" 管理权限 "]')
 set_user_role_frame_element: (By.XPATH,'//input[@placeholder="请选择角色"]')
 select_user_role_element: (By.XPATH,'//li/span[text()="$role_name"]')
@@ -20,9 +20,10 @@ search_role_btn_emelent: (By.XPATH,'//span[text()="查询"]')
 creat_role_element: (By.XPATH,'//span[text()="新建角色"]')
 role_name_element: (By.XPATH,'//div[@class="el-form-item__content"]//input[@class="el-input__inner"]')
 role_data_scope_element: (By.XPATH,'//span[text()="$role_data_scope"]')
-role_descript_element: By.XPATH,'//textarea[@class="el-textarea__inner"]')
+role_descript_element: (By.XPATH,'//textarea[@class="el-textarea__inner"]')
 role_menu_element: (By.XPATH,'//span[@class="el-tree-node__label" and text()="$role_menu"]/..//span[@class="el-checkbox__inner"]/..')
 create_role_btn_element: (By.XPATH,'//span[text()=" 立即创建 "]')
+go_back_element: (By.XPATH,'//span[text()=" 返回 "]')
 #全部菜单：
 all_menu: ("首页","客户管理","客户标签","话术管理","用户管理","权限管理")
 #编辑角色

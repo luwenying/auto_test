@@ -23,6 +23,7 @@ class PermissionManage(WebCommon):
         role_data_scope_element = yamlstr_to_tuple(data["role_data_scope_element"].replace("$role_data_scope",role_data_scope))
         role_descript_element = yamlstr_to_tuple(data["role_descript_element"])
         create_role_btn_element = yamlstr_to_tuple(data["create_role_btn_element"])
+        go_back_element = yamlstr_to_tuple(data["go_back_element"])
 
         self.wait_element_visible(role_name_element)
         self.clear_input(role_name,role_name_element)
@@ -55,10 +56,12 @@ class PermissionManage(WebCommon):
         for menu in false_menu:
             role_menu_element = yamlstr_to_tuple(data["role_menu_element"].replace("$role_menu", menu))
             attr = self.get_attr("class", role_menu_element)
-            print("class属性值是：", attr)
+            print(f"{menu}的class属性值是：", attr)
             if "is-checked" in attr:
                 self.click(role_menu_element)
         self.click(create_role_btn_element)
+        self.wait_element_visible(go_back_element)
+        self.click(go_back_element)
 
 
     def create_role(self,role_name,role_data_scope,role_menu:tuple,role_descript=None):

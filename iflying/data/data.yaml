@@ -40,15 +40,15 @@ corp_manage:
 
   permission_manage:
     #创建角色
-    create_role_name: 测试00001
+    create_role_name: 测试00004
     create_role_data_scope: 查看全部数据
     create_role_menu: ("首页","客户管理")
     create_role_descript: dd
     #编辑角色
-    modify_search_role_name: 测试00001
-    modify_role_name: 测试00002
+    modify_search_role_name: 测试00004
+    modify_role_name: 测试00005
     modify_role_data_scope: 查看个人数据
-    modify_role_menu: ("首页","客户管理")
+    modify_role_menu: ("首页","用户管理","权限管理")
     modify_role_descript: 看看
     #查询角色
     search_role_name: 测试00002
