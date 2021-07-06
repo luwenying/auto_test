@@ -9,5 +9,5 @@ language_manage_element_second = (By.XPATH,'//li[text()="话术管理"]')
 
 class CorpManage(WebCommon):
 
-    def into_customer_manager(self):
+    def user_manager(self):
         self.click(language_manage_element_second)

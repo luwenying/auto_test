@@ -7,6 +7,9 @@ import yaml
 from biz.get_path import *
 from selenium.webdriver.common.by import By
 
+from iflying.get_path import *
+
+
 def get_yaml_data(file_path):
     # menu = "商户管理"
     with open(file_path,"r",encoding="utf-8") as f:
@@ -32,6 +35,7 @@ def replace_variable(data:str,**kwargs):
     else:
         data = json.dumps(data)
     new_data = json.loads(Template(data).substitute(**kwargs))
+    print("__替换后的数据为：",new_data)
     return new_data
 
 
@@ -72,10 +76,23 @@ if __name__=="__main__":
     # select_sql = f"select * from merchant_user where account='{name}'"
     # res = con_mysql("selectone",select_sql)
     # print(res)
+    data = get_yaml_data(language_manage_element)
+    print(type(data))
+    # print(json.dumps(data))
+    data1 = data["add_industry_name_select_element"]
+    print(data1)
+    print(type(data1))
+    re_data1 = data1.replace("$add_industry_name","你好")
+    print(re_data1)
+    new_data = replace_variable(data1,add_industry_name="你好")
 
-    data = {"name":"$name","sex":"$sex"}
-    print(replace_variable(data,name="卢文英",sex="女"))
-
+    # print(type(new_data))
+    # data = {"name": (By.XPATH,'//span[text()="$add_industry_name"]')}
+    # print(data["name"])
+    # newdata = replace_variable(data["name"],add_industry_name="你好")
+    # name = yamlstr_to_tuple(newdata["name"])
+    # print(newdata)
+    # # print(name)
 
 
 

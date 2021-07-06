@@ -8,9 +8,31 @@ customer_manage:
   end_time:
 
 language_manage:
-  add_scene_name: 保险
+  add_scene_name: 保险01
   add_industry_name: 测试保险-1
   add_descript:
-  modify_scene_name: 保险01
-  modify__descript: 123
+  modify_scene_name: 保险02
+  modify_descript: 123
+  #添加话术配置
+  add_question: 你好呀
+  add_intention: 你好
+  add_answer: 你好，有什么事情
+  add_start_time: '2021-06-25'
+  add_end_time: '2021-07-25'
+  #修改话术
+  search_modify_question: 你好呀
+  modify_question: 你好呀?
+  modify_intention: 啊
+  modify_answer: 干啥
+  modify_start_time:
+  modify_end_time:
+  #删除话术
+  search_cancel_question: 你好呀?
+  #启用话术：
+  search_enable_question: 你好呀?
+  #禁止话术
+  search_disable_question: 你好呀?
+
+
+
 

@@ -76,7 +76,8 @@ class WebCommon():
             loc.clear()
             loc.send_keys(txt)
         else:
-            elem = self.locate(loc,value).clear()
+            elem = self.locate(loc,value)
+            elem.clear()
             elem.send_keys(txt)
 
     def element_input(self,txt,element):

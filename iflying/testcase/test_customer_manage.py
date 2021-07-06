@@ -8,7 +8,7 @@ from public_common.get_driver import get_driver
 
 
 class TestCustomer():
-    def setup(self):
+    def setup_class(self):
         self.driver = get_driver()
         self.login = Login(self.driver)
 
