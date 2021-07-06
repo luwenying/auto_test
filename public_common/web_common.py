@@ -191,32 +191,20 @@ class WebCommon():
                 f.write(json.dumps(cookie)+"\n")
 
 
+    def get_attr(self,attr,loc,value=None):
+        if isinstance(loc,WebElement):
+            return loc.get_attribute(attr)
+        else:
+            return self.locate(loc,value).get_attribute(attr)
+
+
 
 
 
 
 
 if __name__=="__main__":
-    from public_common.get_driver import get_driver
-    from biz.common.read_data import get_yaml_data
-    from biz.get_path import *
-    import yaml
-    driver = get_driver()
-    web = WebCommon(driver)
-    _params = {}
-    sys_name = "商户管理中心"
-    menu = "产品管理"
-    second_menu = "产品管理"
-    _params["sys_name"] = sys_name
-    _params["menu"] = menu
-    _params["second_menu"] = second_menu
-    _data = get_yaml_data(element_data)
-    data = web.replace_yaml_variable(_data,_params)
-    print(data["application_element"])
-    print(data["menu_element"])
-    print(data["second_menu_element"])
-
-
+    pass
 
 
 

@@ -16,16 +16,19 @@ corp_manage_element = yamlstr_to_tuple(data["menu"]["corp_manage_element"])
 class Index(WebCommon):
 
     def customer_manager_index(self):
+        """进入客户管理页面"""
         self.wait_element_visible(customer_manager_element)
         self.click(customer_manager_element)
         return CustomerManage(self._driver)
 
     def language_manage_index(self):
+        """进入话术管理界面"""
         self.wait_element_visible(language_manage_element)
         self.click(language_manage_element)
         return LanguageManage(self._driver)
 
     def corp_manage_index(self):
+        """进入企业管理界面"""
         self.wait_element_visible(corp_manage_element)
         self.click(corp_manage_element)
         return CorpManage(self._driver)
