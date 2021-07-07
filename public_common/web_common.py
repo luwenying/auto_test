@@ -197,6 +197,27 @@ class WebCommon():
         else:
             return self.locate(loc,value).get_attribute(attr)
 
+    def add_attr(self,attr_name,attr_value,loc,value=None):
+        """给元素增加熟悉"""
+        if isinstance(loc,WebElement):
+            self._driver.execute_script(f"arguments[0].{attr_name}=arguments[1]",loc,attr_value)
+        else:
+            self._driver.execute_script(f"arguments[0].{attr_name}=arguments[1]",self.locate(loc,value),attr_value)
+
+    def set_attr(self,attr_name,attr_value,loc,value=None):
+        if isinstance(loc,WebElement):
+            self._driver.execute_script(f"arguments[0].setAttribute(arguments[1],arguments[2])",loc,attr_name,attr_value)
+
+        else:
+            self._driver.execute_script(f"arguments[0].setAttribute(arguments[1],arguments[2])", self.locate(loc,value), attr_name,
+                                        attr_value)
+
+    def remove_attr(self,attr_name,loc,value=None):
+        if isinstance(loc,WebElement):
+            self._driver.execute_script(f"arguments[0].removeAttribute({attr_name})",loc)
+        else:
+            self._driver.execute_script(f"arguments[0].removeAttribute({attr_name})", self.locate(loc,value))
+
 
 
 

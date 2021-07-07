@@ -10,8 +10,10 @@ customer_service_select_element: (By.XPATH,'//span[text()="$customer_service"]')
 customer_sex_element: (By.XPATH,'//input[@placeholder="请选择性别"]')
 customer_sex_select_element: (By.XPATH,'//span[text()="$sex"]')
 #时间控件
-start_time_element: (By.XPATH,'//input[@placeholder="开始日期"]')
-end_time_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+start_date_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+end_date_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+start_time_element: (By.XPATH,'//input[@placeholder="开始时间"]')
+end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
 confirm_element: (By.XPATH,'//span[text()="确定"]')
 #查询
 search_btn_element: (By.XPATH,'//span[text()="查询"]')

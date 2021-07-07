@@ -84,18 +84,37 @@ class LanguageManage(WebCommon):
         self.wait_element_visible(into_language_element,20)
         self.click(into_language_element)
 
-    def input_time(self,start_time,end_time):
-        self.sleep(1)
-        self.add_start_time_element = yamlstr_to_tuple(data["add_start_time_element"])
-        self.add_end_time_element = yamlstr_to_tuple(data["add_end_time_element"])
-        self.click(self.add_start_time_element)
-        add_start_time_elements = self.locates(self.add_start_time_element)
-        add_end_time_elements = self.locates(self.add_end_time_element)
-        self.clear_input(start_time,add_start_time_elements[1])
-        self.clear_input(end_time,add_end_time_elements[1])
-        self.click(self.confirm_element)
+    def input_time(self,start_date=None,end_date=None,start_time=None,end_time=None):
 
-    def add_modify_common(self,add_question,add_intention,add_answer,add_start_time=None,add_end_time=None):
+        add_start_date_element = yamlstr_to_tuple(data["add_start_date_element"])
+        add_end_date_element = yamlstr_to_tuple(data["add_end_date_element"])
+        add_start_time_element = yamlstr_to_tuple(data["add_start_time_element"])
+        add_end_time_element = yamlstr_to_tuple(data["add_end_time_element"])
+
+        if start_date and end_date:
+            self.wait_element_visible(add_start_date_element)
+            self.click(add_start_date_element)
+            # 输入日期年月日
+            input_start_date_element = self.locates(add_start_date_element)
+            input_end_date_element = self.locates(add_end_date_element)
+            self.clear_input(start_date, input_start_date_element[1])
+            self.clear_input(end_date, input_end_date_element[1])
+            if start_time == None:
+                start_time = "00:00:00"
+            else:
+                start_time = start_time
+
+            if end_time == None:
+                end_time = "00:00:00"
+            else:
+                end_time = end_time
+            # 输入时间
+            self.clear_input(start_time, add_start_time_element)
+            self.clear_input(end_time, add_end_time_element)
+            self.click(self.confirm_element)
+
+
+    def add_modify_common(self,add_question,add_intention,add_answer,start_date=None,end_date=None,start_time=None,end_time=None):
         self.add_question_element = yamlstr_to_tuple(data["add_question_element"])
         self.add_intention_frame_element = yamlstr_to_tuple(data["add_intention_frame_element"])
         self.add_answer_element = yamlstr_to_tuple(data["add_answer_element"])
@@ -112,18 +131,18 @@ class LanguageManage(WebCommon):
         #输入推荐答案
         self.clear_input(add_answer,self.add_answer_element)
         # 输入有效期
-        if add_start_time and add_end_time:
-            self.input_time(add_start_time, add_end_time)
+        if start_date and end_date:
+            self.input_time(start_date, end_date,start_time,end_time)
         self.click(self.confirm_element)
 
 
 
-    def add_language(self,add_question,add_intention,add_answer,add_start_time=None,add_end_time=None):
+    def add_language(self,add_question,add_intention,add_answer,add_start_date=None,add_end_date=None,add_start_time=None,add_end_time=None):
         self.into_language()
         add_language_btn_element = yamlstr_to_tuple(data["add_language_btn_element"])
         self.wait_element_visible(add_language_btn_element)
         self.click(add_language_btn_element)
-        self.add_modify_common(add_question,add_intention,add_answer,add_start_time,add_end_time)
+        self.add_modify_common(add_question,add_intention,add_answer,add_start_date,add_end_date,add_start_time,add_end_time)
 
 
 
@@ -149,13 +168,13 @@ class LanguageManage(WebCommon):
         # self.sleep(2)
 
 
-    def modify_language(self,modify_question,modify_intention,add_answer,modify_start_time=None,modify_end_time=None,search_question=None):
+    def modify_language(self,modify_question,modify_intention,add_answer,modify_end_date=None,modify_start_date=None,modify_start_time=None,modify_end_time=None,search_question=None):
         modify_language_btn_element = yamlstr_to_tuple(data["modify_language_btn_element"])
         if search_question:
             self.search_language(search_question)
         self.wait_element_visible(modify_language_btn_element)
         self.click(modify_language_btn_element)
-        self.add_modify_common(modify_question,modify_intention,add_answer,modify_start_time,modify_end_time)
+        self.add_modify_common(modify_question,modify_intention,add_answer,modify_start_date,modify_end_date,modify_start_time,modify_end_time)
 
 
     def cancel_language(self,search_question=None):

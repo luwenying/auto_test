@@ -19,7 +19,9 @@ class CustomerManage(WebCommon):
         self.click(customer_manager_element_second)
         return True
 
-    def search_customer(self,customer_name=None,customer_service=None,sex=None,start_time=None,end_time=None):
+    def search_customer(self,customer_name=None,customer_service=None,sex=None,start_date=None,end_date=None,start_time=None,end_time=None):
+
+
         new_data = replace_variable(data,customer_service=customer_service,sex=sex)
         # 客户搜搜
         # 客户名称
@@ -31,8 +33,11 @@ class CustomerManage(WebCommon):
         customer_sex_element = yamlstr_to_tuple(new_data["customer_sex_element"])
         customer_sex_select_element = yamlstr_to_tuple(new_data["customer_sex_select_element"])
         # 时间控件
+        start_date_element = yamlstr_to_tuple(new_data["start_date_element"])
+        end_date_element = yamlstr_to_tuple(new_data["end_date_element"])
         start_time_element = yamlstr_to_tuple(new_data["start_time_element"])
         end_time_element = yamlstr_to_tuple(new_data["end_time_element"])
+
         confirm_element = yamlstr_to_tuple(new_data["confirm_element"])
         # 查询
         search_btn_element = yamlstr_to_tuple(new_data["search_btn_element"])
@@ -50,25 +55,39 @@ class CustomerManage(WebCommon):
             self.wait_element_visible(customer_sex_select_element)
             self.click(customer_sex_select_element)
 
-        if start_time and end_time:
-            self.wait_element_visible(start_time_element)
-            self.click(start_time_element)
-            input_start_time_element = self.locates(start_time_element)
-            input_end_time_element = self.locates(end_time_element)
-            self.input(start_time,input_start_time_element[1])
-            self.clear_input(end_time,input_end_time_element[1])
+        if start_date and end_date:
+            self.wait_element_visible(start_date_element)
+            self.click(start_date_element)
+            #输入日期年月日
+            input_start_date_element = self.locates(start_date_element)
+            input_end_date_element = self.locates(end_date_element)
+            self.clear_input(start_date,input_start_date_element[1])
+            self.clear_input(end_date,input_end_date_element[1])
+            if start_time == None:
+                start_time = "00:00:00"
+            else:
+                start_time = start_time
+
+            if end_time == None:
+                end_time = "00:00:00"
+            else:
+                end_time = end_time
+            #输入时间
+            self.clear_input(start_time,start_time_element)
+            self.clear_input(end_time,end_time_element)
             self.click(confirm_element)
+
 
         self.wait_element_visible(search_btn_element)
         self.click(search_btn_element)
         return True
 
-    def update_customer(self):
-        # 更新数据
-        update_btn_element = yamlstr_to_tuple(data["update_btn_element"])
-        self.wait_element_visible(update_btn_element)
-        self.click(update_btn_element)
-        return True
+    # def update_customer(self):
+    #     # 更新数据
+    #     update_btn_element = yamlstr_to_tuple(data["update_btn_element"])
+    #     self.wait_element_visible(update_btn_element)
+    #     self.click(update_btn_element)
+    #     return True
 
 
 

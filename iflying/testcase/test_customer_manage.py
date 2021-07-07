@@ -19,9 +19,9 @@ class TestCustomer():
         self.customer.into_customer_manager()
         customer_manage = data["customer_manage"]
         self.customer.search_customer(customer_name=customer_manage["customer_name"],customer_service=customer_manage["customer_service"],sex=customer_manage["sex"],
-                                 start_time=customer_manage["start_time"],end_time=customer_manage["end_time"])
+                                 start_date=customer_manage["start_date"],end_date=customer_manage["end_date"])
 
-    def test_update_customer(self):
-        self.customer.update_customer()
+    # def test_update_customer(self):
+    #     self.customer.update_customer()
 
 

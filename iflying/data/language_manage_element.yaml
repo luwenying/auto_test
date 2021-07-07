@@ -23,8 +23,11 @@ add_question_element: (By.XPATH,'//textarea[@placeholder="请输入，100字以�
 add_intention_frame_element: (By.XPATH,'//input[@placeholder="请选择意图"]')
 add_intention_element: (By.XPATH,'//span[text()="$add_intention"]')
 add_answer_element: (By.XPATH,'//textarea[@placeholder="请输入，200字以内"]')
-add_start_time_element: (By.XPATH,'//input[@placeholder="开始日期"]')
-add_end_time_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+#时间控件
+add_start_date_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+add_end_date_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+add_start_time_element: (By.XPATH,'//input[@placeholder="开始时间"]')
+add_end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
 add_answer_btn_element: (By.XPATH,'//span[text()="添加答案"]')
 #编辑话术
 modify_language_btn_element: (By.XPATH,'//tr[@class="el-table__row"]//span[text()="编辑"]')

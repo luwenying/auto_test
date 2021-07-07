@@ -38,18 +38,22 @@ class TestManage():
         add_question = self.language_manage["add_question"]
         add_intention = self.language_manage["add_intention"]
         add_answer = self.language_manage["add_answer"]
+        add_start_date = self.language_manage["add_start_date"]
+        add_end_date = self.language_manage["add_end_date"]
         add_start_time = self.language_manage["add_start_time"]
         add_end_time = self.language_manage["add_end_time"]
-        self.language.add_language(add_question,add_intention,add_answer,add_start_time,add_end_time)
+        self.language.add_language(add_question,add_intention,add_answer,add_start_date,add_end_date,add_start_time,add_end_time)
 
     def test_modify_language(self):
         search_modify_question = self.language_manage["search_modify_question"]
         modify_question = self.language_manage["modify_question"]
         modify_intention = self.language_manage["modify_intention"]
         modify_answer = self.language_manage["modify_answer"]
+        modify_start_date = self.language_manage["modify_start_date"]
+        modify_end_date = self.language_manage["modify_end_date"]
         modify_start_time = self.language_manage["modify_start_time"]
         modify_end_time = self.language_manage["modify_end_time"]
-        self.language.modify_language(modify_question,modify_intention,modify_answer,modify_start_time,modify_end_time,search_modify_question)
+        self.language.modify_language(modify_question,modify_intention,modify_answer,modify_start_date,modify_end_date,modify_start_time,modify_end_time,search_modify_question)
 
 
     def test_language_disable(self):

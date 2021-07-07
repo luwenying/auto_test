@@ -1,11 +1,14 @@
-
+#登录url
 url: https://iflying-manage-dev.zhilingsd.com/#/login
+#客户管理
 customer_manage:
   customer_name: reminiscence
   customer_service: another
   sex: 女
-  start_time:
-  end_time:
+  start_date: '2021-06-05'
+  end_date: '2021-07-05'
+  start_time: '00:00:00'
+  end_time: '00:00:00'
 
 language_manage:
   add_scene_name: 保险01
@@ -17,13 +20,18 @@ language_manage:
   add_question: 你好呀
   add_intention: 你好
   add_answer: 你好，有什么事情
-  add_start_time: '2021-06-25'
-  add_end_time: '2021-07-25'
+  add_start_date: '2021-06-25'
+  add_end_date: '2021-07-25'
+  add_start_time:
+  add_end_time:
+
   #修改话术
   search_modify_question: 你好呀
   modify_question: 你好呀?
   modify_intention: 啊
   modify_answer: 干啥
+  modify_start_date:
+  modify_end_date:
   modify_start_time:
   modify_end_time:
   #删除话术
