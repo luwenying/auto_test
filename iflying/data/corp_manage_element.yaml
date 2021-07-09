@@ -7,7 +7,7 @@ username_element: (By.XPATH,'//input[@placeholder="成员名称"]')
 search_btn_element: (By.XPATH,'//span[text()="查询"]')
 #同步
 user_synchronize_element: (By.XPATH,'//span[text()=" 同步 "]')
-#管理权限步
+#管理权限
 set_user_permissin_element: (By.XPATH,'//span[text()=" 管理权限 "]')
 set_user_role_frame_element: (By.XPATH,'//input[@placeholder="请选择角色"]')
 select_user_role_element: (By.XPATH,'//li/span[text()="$role_name"]')

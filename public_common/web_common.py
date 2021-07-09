@@ -73,12 +73,18 @@ class WebCommon():
     def clear_input(self,txt,loc,value=None):
         if isinstance(loc,WebElement):
             loc: WebElement
-            loc.clear()
-            loc.send_keys(txt)
+            try:
+                loc.clear()
+            except Exception as e:
+                print(e)
+            finally:loc.send_keys(txt)
         else:
             elem = self.locate(loc,value)
-            elem.clear()
-            elem.send_keys(txt)
+            try:
+                elem.clear()
+            except Exception as e:
+                print(e)
+            finally:elem.send_keys(txt)
 
     def element_input(self,txt,element):
         element.send_keys(txt)
@@ -92,8 +98,18 @@ class WebCommon():
             loc: WebElement
             return loc.text
         else:
-            elem= self.locate(loc,value)
+            elem = self.locate(loc,value)
             return elem.text
+
+    def get_txts(self,loc,value=None):
+        elem = self.locates(loc,value)
+        txts = [e.text for e in elem]
+        return txts
+
+        # for e in elem:
+        #     txt = e.text
+        #     txts.append(txt)
+
 
     def wait(self,num):
         self._driver.implicitly_wait(num)

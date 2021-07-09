@@ -20,6 +20,7 @@ class CustomerManage(WebCommon):
         return True
 
     def search_customer(self,customer_name=None,customer_service=None,sex=None,start_date=None,end_date=None,start_time=None,end_time=None):
+        #常规查询
 
 
         new_data = replace_variable(data,customer_service=customer_service,sex=sex)
@@ -41,6 +42,8 @@ class CustomerManage(WebCommon):
         confirm_element = yamlstr_to_tuple(new_data["confirm_element"])
         # 查询
         search_btn_element = yamlstr_to_tuple(new_data["search_btn_element"])
+        #断言字段
+        # assert_customer_name = yamlstr_to_tuple(new_data["assert_customer_name"])
 
         if customer_name:
             self.wait_element_visible(customer_name_element)
@@ -77,10 +80,16 @@ class CustomerManage(WebCommon):
             self.clear_input(end_time,end_time_element)
             self.click(confirm_element)
 
-
         self.wait_element_visible(search_btn_element)
         self.click(search_btn_element)
-        return True
+        # try:
+        #     self.wait_element_visible(assert_customer_name)
+        #     txts = self.get_txts(assert_customer_name)
+        #     print(txts)
+        #     return txts
+        # except Exception as e:
+        #     print(e)
+        #     return False
 
     # def update_customer(self):
     #     # 更新数据

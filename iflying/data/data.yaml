@@ -9,13 +9,25 @@ customer_manage:
   end_date: '2021-07-05'
   start_time: '00:00:00'
   end_time: '00:00:00'
+  #返回断言字段客户
+  assert_customer_name: (By.XPATH,'//tr[@class="el-table__row"]/td/div')
 
+#话术管理
 language_manage:
+  #添加场景
   add_scene_name: 保险01
   add_industry_name: 测试保险-1
   add_descript:
+  #修改场景
   modify_scene_name: 保险02
   modify_descript: 123
+  assert_add_scene: (By.XPATH,'//div[@class="card-title"]')
+  #禁用启用场景
+  disable_or_enble_scene_name: 保险
+  assert_disable_or_enble_scene: "select * from biz_script_category where category_name='$scene_name'"
+  #删除场景断言
+  assert_cancel_scene: "select * from biz_script_category where category_name='$scene_name' and merchant_id='1924093577040625664'"
+
   #添加话术配置
   add_question: 你好呀
   add_intention: 你好
@@ -24,6 +36,8 @@ language_manage:
   add_end_date: '2021-07-25'
   add_start_time:
   add_end_time:
+  assert_sql: "select * from biz_script_recommend_relation where standard_script_name='$add_question' and merchant_id='1924093577040625664'"
+  del_sql: "delete from biz_script_recommend_relation where standard_script_name='$add_question' and merchant_id='1924093577040625664'"
 
   #修改话术
   search_modify_question: 你好呀
@@ -41,17 +55,25 @@ language_manage:
   #禁止话术
   search_disable_question: 你好呀?
 
+#企业管理
 corp_manage:
+  #用户管理
   user_manage:
     username: luwenying
     role_name: 哈哈02
+    assert_user_role: "select mr.role_name from merchant_role mr join merchant_user_role_relate murr on mr.id=murr.role_id
+join merchant_user mu on murr.user_id=mu.id where mu.user_name='$username' and murr.merchant_id='1924093577040625664'"
 
+#权限管理
   permission_manage:
     #创建角色
     create_role_name: 测试00004
     create_role_data_scope: 查看全部数据
     create_role_menu: ("首页","客户管理")
     create_role_descript: dd
+    del_role: "delete from merchant_role where role_name='$role_name'"
+    select_role: "select * from merchant_role where role_name='$role_name'"
+
     #编辑角色
     modify_search_role_name: 测试00004
     modify_role_name: 测试00005
@@ -60,6 +82,7 @@ corp_manage:
     modify_role_descript: 看看
     #查询角色
     search_role_name: 测试00002
+    assert_role_name: (By.XPATH,'//tr[@class="el-table__row"]/td/div[@class="cell"]')
 
 
 

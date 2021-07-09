@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d64e50b-7de1-4b65-924e-5a7c0bd75b28" name="Default Changelist" comment="2021-7-6">
+    <list default="true" id="4d64e50b-7de1-4b65-924e-5a7c0bd75b28" name="Default Changelist" comment="2021-7-7">
+      <change afterPath="$PROJECT_DIR$/iflying/data/db.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_common/app_common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_common/get_app_driver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_common/pra.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_common/scan_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying/data/corp_manage_element.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/data/corp_manage_element.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/data/customer_manage_element.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/data/customer_manage_element.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/data/data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/data/data.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/data/language_manage_element.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/data/language_manage_element.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying/get_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/get_path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/page/customer_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/page/customer_manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/page/language_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/page/language_manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/testcase/test_customer_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/testcase/test_customer_manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iflying/testcase/test_language_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/testcase/test_language_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying/testcase/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/testcase/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying/testcase/test_permission_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/testcase/test_permission_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying/testcase/test_user_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying/testcase/test_user_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_common/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/public_common/read_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_common/web_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/public_common/web_common.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="ide.date.format" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -63,7 +75,7 @@
       <recent name="F:\webUI\biz" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run (1)">
+  <component name="RunManager" selected="Python.scan_login (1)">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="webUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,48 +89,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="webUI" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/biz" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/biz/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="permission_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="webUI" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iflying/page" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying/page/permission_manage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,7 +139,49 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_user_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="scan_login (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="webUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/public_common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/public_common/scan_login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scan_login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="webUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/public_common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="F:\webUI\public_common\scan_login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_language_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="webUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,7 +193,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying/testcase/test_user_manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying/testcase/test_language_manage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,17 +206,17 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.run (1)" />
       <item itemvalue="Python.read_data" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.test_user_manage" />
-      <item itemvalue="Python.permission_manage" />
+      <item itemvalue="Python.test_language_manage" />
+      <item itemvalue="Python.scan_login" />
+      <item itemvalue="Python.scan_login (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scan_login (1)" />
+        <item itemvalue="Python.scan_login" />
         <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.permission_manage" />
-        <item itemvalue="Python.test_user_manage" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.read_data" />
+        <item itemvalue="Python.test_language_manage" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625557251952</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2021-7-7">
+      <created>1625652246906</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625652246906</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -274,6 +293,7 @@
     <MESSAGE value="没事修改" />
     <MESSAGE value="2021-7-5" />
     <MESSAGE value="2021-7-6" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-7-6" />
+    <MESSAGE value="2021-7-7" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-7-7" />
   </component>
 </project>

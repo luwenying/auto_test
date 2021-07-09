@@ -58,12 +58,16 @@ class LanguageManage(WebCommon):
         self.click(self.confirm_element)
 
 
-    def scene_enable_or_disable(self):
+    def scene_enable_or_disable(self,scene_name):
 
-        scene_enable_or_disable_element = yamlstr_to_tuple(data["scene_enable_or_disable_element"])
+        scene_enable_or_disable_element = yamlstr_to_tuple(data["scene_enable_or_disable_element"].replace("$scene_name",scene_name))
         self.wait_element_visible(scene_enable_or_disable_element)
         self.click(scene_enable_or_disable_element)
 
+    def into_more(self):
+        self.more_element = yamlstr_to_tuple(data["more_element"])
+        self.wait_element_visible(self.more_element)
+        self.hover(self.more_element)
 
     def cancel_scene(self):
         self.into_more()
@@ -72,11 +76,6 @@ class LanguageManage(WebCommon):
         self.click(del_scene_element)
         self.wait_element_visible(self.confirm_element,15)
         self.click(self.confirm_element)
-
-    def into_more(self):
-        self.more_element = yamlstr_to_tuple(data["more_element"])
-        self.wait_element_visible(self.more_element)
-        self.hover(self.more_element)
 
     def into_language(self):
         self.into_more()
@@ -99,6 +98,7 @@ class LanguageManage(WebCommon):
             input_end_date_element = self.locates(add_end_date_element)
             self.clear_input(start_date, input_start_date_element[1])
             self.clear_input(end_date, input_end_date_element[1])
+
             if start_time == None:
                 start_time = "00:00:00"
             else:
@@ -151,7 +151,6 @@ class LanguageManage(WebCommon):
         search_status_frame_element = yamlstr_to_tuple(data["search_status_frame_element"])
         search_source_frame_element = yamlstr_to_tuple(data["search_source_frame_element"])
         search_btn_element = yamlstr_to_tuple(data["search_btn_element"])
-
 
         if search_question:
 

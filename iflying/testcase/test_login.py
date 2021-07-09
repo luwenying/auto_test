@@ -6,6 +6,7 @@ from iflying.get_path import *
 from public_common.read_data import get_yaml_data
 import yaml
 
+@pytest.skip("登录不需要测试")
 class TestLogin():
     data = get_yaml_data(all_data)
 

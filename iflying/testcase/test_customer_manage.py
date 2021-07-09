@@ -20,6 +20,17 @@ class TestCustomer():
         customer_manage = data["customer_manage"]
         self.customer.search_customer(customer_name=customer_manage["customer_name"],customer_service=customer_manage["customer_service"],sex=customer_manage["sex"],
                                  start_date=customer_manage["start_date"],end_date=customer_manage["end_date"])
+        # print(assert_data)
+        # assert customer_manage["customer_name"] == assert_data
+        assert_element = yamlstr_to_tuple(customer_manage["assert_customer_name"])
+        try:
+            self.customer.wait_element_visible(assert_element)
+            txt = self.customer.get_txt(assert_element)
+            print(txt)
+            assert customer_manage["customer_name"]==txt
+        except Exception as e:
+            print(e)
+            assert False
 
     # def test_update_customer(self):
     #     self.customer.update_customer()

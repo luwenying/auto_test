@@ -9,8 +9,8 @@ add_descript_element: (By.XPATH,'//textarea[@placeholder="描述"]')
 confirm_element: (By.XPATH,'//span[text()="确 定" or text()="确定"]')
 #编辑话术
 modify_element: (By.XPATH,'//span[text()="编辑"]')
-#启用/禁用元素
-scene_enable_or_disable_element: (By.XPATH,'//div[@class="el-switch__action"]')
+#启用/禁用场景
+scene_enable_or_disable_element: (By.XPATH,'//div[@class="card-title" and text()="$scene_name"]/../..//div[@class="el-switch__action"]')
 #更多
 more_element:  (By.XPATH,'//span[contains(text(),"更多")]')
 #删除场景
@@ -29,6 +29,7 @@ add_end_date_element: (By.XPATH,'//input[@placeholder="结束日期"]')
 add_start_time_element: (By.XPATH,'//input[@placeholder="开始时间"]')
 add_end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
 add_answer_btn_element: (By.XPATH,'//span[text()="添加答案"]')
+
 #编辑话术
 modify_language_btn_element: (By.XPATH,'//tr[@class="el-table__row"]//span[text()="编辑"]')
 #查询话术

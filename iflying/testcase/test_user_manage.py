@@ -1,7 +1,7 @@
 #coding:utf-8
 from iflying.page.login import Login
 from iflying.get_path import *
-from public_common.read_data import yamlstr_to_tuple,get_yaml_data
+from public_common.read_data import yamlstr_to_tuple,get_yaml_data,con_mysql
 from public_common.get_driver import get_driver
 
 class TestUserManage():
@@ -22,11 +22,13 @@ class TestUserManage():
         username = self.user_manage_data["username"]
         self.user_manage.search_user(username)
 
-    def test_user_synchronize(self):
-        self.user_manage.user_synchronize()
+    # def test_user_synchronize(self):
+    #     self.user_manage.user_synchronize()
 
     def test_set_user_role(self):
         role_name = self.user_manage_data["role_name"]
+        assert_user_role = yamlstr_to_tuple(self.user_manage_data["assert_user_role"])
+        before_role = con_mysql("iflying","selectone",assert_user_role)
         self.user_manage.set_user_permission(role_name)
 
 

@@ -17,5 +17,6 @@ end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
 confirm_element: (By.XPATH,'//span[text()="确定"]')
 #查询
 search_btn_element: (By.XPATH,'//span[text()="查询"]')
+
 #更新数据
-update_btn_element: (By.XPATH,'//span[text()="更新数据"]')
+update_btn_element: (By.XPATH,'//tr[@class="el-table__row"]/td/div')

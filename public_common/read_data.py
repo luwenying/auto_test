@@ -39,7 +39,7 @@ def replace_variable(data:str,**kwargs):
     return new_data
 
 
-def con_mysql(key,sql):
+def con_mysql(env_name,key,sql):
     """
     key:selectall：返回全部
     key:selectone:返回一条
@@ -47,13 +47,18 @@ def con_mysql(key,sql):
     key:insert 插入
     key：delete或者del:删除
     """
-    data = get_yaml_data(db_url)
-    host = data["host"]
-    username = data["username"]
-    password = data["password"]
-    db = data["db"]
-    con = pymysql.connect(host=host,user=username,passwd=password,db=db)
-    cur = con.cursor()
+    data = get_yaml_data(db_config)[env_name]
+    env = data["default"]
+    db_data = data[env]
+    print("数据库环境是：",env)
+    host = db_data["host"]
+    username = db_data["username"]
+    password = db_data["password"]
+    db = db_data["db"]
+    port = db_data["port"]
+    con = pymysql.connect(host=host,user=username,passwd=password,db=db,port=port)
+    #pymysql.cursors.DictCursor让返回的数据为key:value形式
+    cur = con.cursor(pymysql.cursors.DictCursor)
     cur.execute(sql)
     if key=="selectall":
         return cur.fetchall()
@@ -70,29 +75,10 @@ def con_mysql(key,sql):
 
 
 if __name__=="__main__":
-    # sql = "INSERT INTO mkt_product VALUES (1908653076194000902, 'PRODUCT_CODE', '20210618004product', 'NORMAL', '1', 1864957990774112257, 'NORMAL', '2021-06-18 09:13:54', 0, 0, '2021-06-07 09:44:57');"
-    # con_mysql("insert",sql)
-    # name='chenqh008'
-    # select_sql = f"select * from merchant_user where account='{name}'"
-    # res = con_mysql("selectone",select_sql)
-    # print(res)
-    data = get_yaml_data(language_manage_element)
-    print(type(data))
-    # print(json.dumps(data))
-    data1 = data["add_industry_name_select_element"]
-    print(data1)
-    print(type(data1))
-    re_data1 = data1.replace("$add_industry_name","你好")
-    print(re_data1)
-    new_data = replace_variable(data1,add_industry_name="你好")
-
-    # print(type(new_data))
-    # data = {"name": (By.XPATH,'//span[text()="$add_industry_name"]')}
-    # print(data["name"])
-    # newdata = replace_variable(data["name"],add_industry_name="你好")
-    # name = yamlstr_to_tuple(newdata["name"])
-    # print(newdata)
-    # # print(name)
+    sql = "select * from biz_script_recommend_relation where standard_script_name='$question' and merchant_id='1924093577040625664'".replace("$question","你好呀")
+    sql2 = "select * from merchant_role where role_name='测试00004'"
+    res = con_mysql("iflying","selectone",sql)["content_status"]
+    print(res)
 
 
 
