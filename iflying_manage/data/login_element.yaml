@@ -1,0 +1,12 @@
+#            一、登录系统
+username_loc: (By.XPATH, '//input[@placeholder="请输入账号"]')
+password_loc: (By.XPATH, '//input[@placeholder="请输入密码"]')
+login_btn_loc: (By.XPATH, '//*[@id="app"]/div/div[3]/div[2]/form/button')
+high_loc: (By.ID, "details-button")
+continue_into: (By.ID, "proceed-link")
+application_element: (By.XPATH, "//div[contains(text(),'${sys_name}')]")
+menu_element: (By.XPATH,"//span[contains(text(),'${menu}')]")
+second_menu_element: (By.XPATH, "//li[contains(text(),'${second_menu}')]")
+#           二、退出系统
+logout_name: (By.XPATH, "//span[@class='el-dropdown-link el-dropdown-selfdefine']")
+logout_element: (By.XPATH, "//li[contains(text(),'退出登录')]")
