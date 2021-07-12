@@ -1,0 +1,21 @@
+#查询
+merchant_name_element: (By.XPATH,'//input[@placeholder="商户名称"]')
+merchant_status_frame_element: (By.XPATH,'//input[@placeholder="请选择商户状态"]')
+merchant_select_status_element: (By.XPATH,'//li[@class="el-select-dropdown__item"]/span[text()="$status"]')
+search_mechant_btn_element: (By.XPATH,'//span[text()="查询"]')
+#时间控件
+start_date_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+end_date_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+start_time_element: (By.XPATH,'//input[@placeholder="开始时间"]')
+end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
+confirm_element: (By.XPATH,'//span[text()="确定"]')
+
+#分配行业
+allocate_industry_element: (By.XPATH,'//table[@class="el-table__body"]//span[text()="分配行业"]')
+allocate_industry_frame_element: (By.XPATH,'//input[@class="el-cascader__search-input"]')
+select_first_element: (By.XPATH,'//span[text()="$industry_name"]')
+select_industry_element: (By.XPATH,'//span[text()="$industry_name"]/../label/span')
+allocate_confirm_element: (By.XPATH,'//span[text()="确 定"]')
+cancel_allocate_frame_element: (By.XPATH,'//span[@class="el-input__suffix-inner"]/i')
+
+

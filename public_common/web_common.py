@@ -150,10 +150,10 @@ class WebCommon():
         # for confirm_element in confirm_element_list:
         #     self.click(confirm_element)
         try:
-            confirm_element = (By.XPATH, '//span[contains(text(),"确 认") ]')
+            confirm_element = (By.XPATH, '//span[contains(text(),"确 认")]')
             self.click(confirm_element)
         except Exception as e:
-            confirm_element = (By.XPATH, '//span[contains(text(),"确认") ]')
+            confirm_element = (By.XPATH, '//span[contains(text(),"确认")]')
             self.click(confirm_element)
 
             # raise e
@@ -177,6 +177,7 @@ class WebCommon():
         if isinstance(loc,WebElement):
             self._driver.execute_script("arguments[0].click()",loc)
         else:
+            self.wait_element_visible(loc,value)
             self._driver.execute_script("arguments[0].click()",self.locate(loc,value))
 
     def allure_attach(self,img_path):
@@ -234,6 +235,20 @@ class WebCommon():
         else:
             self._driver.execute_script(f"arguments[0].removeAttribute({attr_name})", self.locate(loc,value))
 
+    def wait_click(self,locator,time:int=None):
+        if time == None:
+            time = 10
+        WebDriverWait(self._driver, time).until(expected_conditions.visibility_of_element_located(locator)).click()
+
+    def wait_input(self,txt,locator,time:int=None):
+        if time == None:
+            time = 10
+        element = WebDriverWait(self._driver, time).until(expected_conditions.visibility_of_element_located(locator))
+        element.clear()
+        element.send_keys(txt)
+
+
+
 
 
 
@@ -242,6 +257,8 @@ class WebCommon():
 
 if __name__=="__main__":
     pass
+    # url = "https://www.baidu.com"
+    # web = WebCommon()
 
 
 

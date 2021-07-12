@@ -1,0 +1,24 @@
+#领域查询
+search_domain_element: (By.XPATH,'//input[@placeholder="输入关键字进行过滤"]')
+#意图查询
+search_intention_element: (By.XPATH,'//input[@placeholder="意图名称"]')
+search_status_frame_element: (By.XPATH,'//input[@placeholder="请选择启用状态"]')
+search_status_element: (By.XPATH,'//span[text()="$status"]')
+search_btn_element: (By.XPATH,'//span[text()="查询"]')
+#时间控件
+start_date_element: (By.XPATH,'//input[@placeholder="开始日期"]')
+end_date_element: (By.XPATH,'//input[@placeholder="结束日期"]')
+start_time_element: (By.XPATH,'//input[@placeholder="开始时间"]')
+end_time_element: (By.XPATH,'//input[@placeholder="结束时间"]')
+confirm_element: (By.XPATH,'//span[text()="确定"]')
+#编辑
+modify_element: (By.XPATH,'//tr[@class="el-table__row"]//span[text()="编辑"]')
+modify_question_element: (By.XPATH,'//textarea[@placeholder="请输入，100字以内"]')
+modify_answer_element: (By.XPATH,'//textarea[@placeholder="请输入，200字以内"]')
+modify_confirm_element: (By.XPATH,'//span[text()="确 定"]')
+#禁用、启用
+enable_or_disable_element: (By.XPATH,'//span[text()="禁用" or text()="启用"]')
+enable_confirm_element: (By.XPATH,'//div[@class="el-message-box__btns"]//span[text()="确定"]')
+#同步领域
+domain_element: (By.XPATH,'//span[text()="$domain"]')
+synchronize_domain: (By.XPATH,'//span[text()="同步领域意图"]')

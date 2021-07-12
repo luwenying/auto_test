@@ -1,0 +1,7 @@
+#language_manage_element: (By.XPATH,'//span[contains(text(),"话术管理")]')
+#domain_manage_element: (By.XPATH,'//li[text()="领域知识库" and @role="menuitem"]')
+#system_manage_element: (By.XPATH,'//span[contains(text(),"系统管理")]')
+#merchant_manage_element: (By.XPATH,'//li[text()="商户管理" and @role="menuitem"]')
+#industry_manage_element: (By.XPATH,'//li[text()="行业管理" and @role="menuitem"]')
+main_menu_element: (By.XPATH,'//span[contains(text(),"$main_menu")]')
+second_menu_element: (By.XPATH,'//li[text()="$second_menu" and @role="menuitem"]')

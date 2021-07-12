@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d64e50b-7de1-4b65-924e-5a7c0bd75b28" name="Default Changelist" comment="2021-7-9">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/config/log.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/data/all_data.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/data/login_element.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/get_path.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/page/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/page/login_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/page/main_menu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/testcase/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iflying_manage/testcase/test_login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/data/domain_manage_element.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/data/industry_manage_element.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/data/main_menu.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/data/merchant_manage_element.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/page/domain_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/page/industry_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/page/merchant_manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/testcase/test_domain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/testcase/test_industry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iflying_manage/testcase/test_merchant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying_manage/get_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying_manage/get_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying_manage/page/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying_manage/page/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying_manage/page/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying_manage/page/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying_manage/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying_manage/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iflying_manage/testcase/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/iflying_manage/testcase/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_common/web_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/public_common/web_common.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pra" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="webUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -122,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying_manage/page/pra.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying_manage/page/main_menu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scan_login (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_industry" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="webUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,11 +164,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/public_common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/iflying_manage/testcase" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/public_common/scan_login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/iflying_manage/testcase/test_industry.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,19 +200,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.scan_login (1)" />
-      <item itemvalue="Python.pra" />
       <item itemvalue="Python.login_page" />
       <item itemvalue="Python.test_login" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python.main_menu" />
+      <item itemvalue="Python.test_industry" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.test_industry" />
+        <item itemvalue="Python.main_menu" />
         <item itemvalue="Python.test_login" />
         <item itemvalue="Python.login_page" />
-        <item itemvalue="Python.pra" />
-        <item itemvalue="Python.scan_login (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625821890109</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2021-7-9">
+      <created>1625827702220</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625827702220</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">

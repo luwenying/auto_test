@@ -1,0 +1,18 @@
+#查询行业
+search_industry_element: (By.XPATH,'//input[@placeholder="输入关键字进行过滤"]')
+#新增
+add_first_element: (By.XPATH,'//span[text()="新增"]')
+#新增和编辑name 和 descript第一级和第二级共用
+name_element: (By.XPATH,'//input[@placeholder="请输入，10字以内"]')
+descript_element: (By.XPATH,'//textarea[@placeholder="请输入，20字以内"]')
+confirm_element: (By.XPATH,'//span[text()="确 定"]')
+#新增第二级
+select_first_element: (By.XPATH,'//span[text()="$first_name"]')
+add_second_element: (By.XPATH,'//span[text()="添加下一级行业"]')
+relate_domain_element: (By.XPATH,'//input[@placeholder="请选择关联领域"]')
+select_relate_domain_element:  (By.XPATH,'//span[text()="$add_domain"]')
+#编辑
+modify_element: (By.XPATH,'//span[text()="编辑"]')
+#删除
+cancel_element: (By.XPATH,'//span[text()="删除"]')
+cancel_confirm_element: (By.XPATH,'//span[text()="确定"]')

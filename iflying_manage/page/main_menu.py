@@ -1,35 +1,37 @@
 #coding:utf-8
+from public_common.web_common import WebCommon
+from public_common.read_data import get_yaml_data,yamlstr_to_tuple
+from iflying_manage.get_path import *
+from iflying_manage.page.domain_manage import DomainManage
+from iflying_manage.page.industry_manage import IndustryManage
+from iflying_manage.page.merchant_manage import MerchantManage
+
+data = get_yaml_data(main_menu_element)
+# language_manage_element = yamlstr_to_tuple(data["language_manage_element"])
+# domain_manage_element = yamlstr_to_tuple(data["domain_manage_element"])
+# system_manage_element = yamlstr_to_tuple(data["system_manage_element"])
+# merchant_manage_element = yamlstr_to_tuple(data["merchant_manage_element"])
+# industry_manage_element = yamlstr_to_tuple(data["industry_manage_element"])
 
 
 
-class Main_manage():
-    pass
+class MainMenu(WebCommon):
 
-    def left_menu_click(self, menu, second_menu):
+
+    def left_menu_click(self,main_menu,second_menu):
         """点击左侧大菜单"""
-        self._params["menu"] = menu
-        self._params["second_menu"] = second_menu
-        self.sleep(1)
-        _new_data = self.replace_yaml_variable(_data, self._params)
-        menu_element = yamlstr_to_tuple(_new_data["menu_element"])
-        second_menu_element = yamlstr_to_tuple(_new_data["second_menu_element"])
-        # menu_element = (By.XPATH,"//span[contains(text(),'%s')]"%menu)
-        self.click(menu_element)
-        self.sleep(1)
-        return self.__left_second_menu_click(second_menu_element)
+        main_menu_element = yamlstr_to_tuple(data["main_menu_element"].replace("$main_menu",main_menu))
+        self.wait_click(main_menu_element)
+        return self._left_second_menu_click(second_menu)
 
-    def __left_second_menu_click(self, second_menu):
+    def _left_second_menu_click(self, second_menu):
         """点击第二级菜单"""
-        # self._params["second_menu"] = second_menu
-        self.sleep(1)
-        # second_menu_element = (By.XPATH, "//li[contains(text(),'%s')]" % second_menu)
-        # _new_data = self.replace_yaml_variable(_data, self._params)
-        # second_menu_element = yamlstr_to_tuple(_new_data["second_menu_element"])
-        self.click(second_menu)
-        self.sleep(1)
-        # if second_menu=="商户管理":
-        #     return MerchantManage(self.driver)
-        # elif second_menu=="产品管理":
-        #     return ProductManage(self.driver)
-        # elif second_menu=="用户管理":
-        #     return UserManage(self.driver)
+        second_menu_element = yamlstr_to_tuple(data["second_menu_element"].replace("$second_menu", second_menu))
+        print(f"二级菜单为：{second_menu_element}")
+        self.wait_click(second_menu_element)
+        if second_menu == "领域知识库":
+            return DomainManage(self._driver)
+        elif second_menu == "商户管理":
+            return MerchantManage(self._driver)
+        elif second_menu == "行业管理":
+            return IndustryManage(self._driver)

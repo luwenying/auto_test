@@ -10,4 +10,4 @@ class TestLogin():
         self.login = Login(driver)
 
     def test_login(self):
-        self.login.login("luwenying", "Aa123456.", "产飞助手")
+        self.login.login("luwenying", "Aa123456.", "产飞助手").left_menu_click("系统管理","行业管理")
