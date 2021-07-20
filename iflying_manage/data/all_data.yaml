@@ -3,3 +3,117 @@ login:
   username: luwenying
   password: Aa123456.
   sysname: 产飞助手
+
+#行业管理的数据
+industry:
+  #一级和二级菜单
+  first_menu: 系统管理
+  second_menu: 行业管理
+  #行业查询
+  test_search:
+    industry_name: 保险
+  #添加第一级行业
+  test_add_first_industry:
+    industry_name: 测试0002
+    descript: 自动话测试添加
+    assert_sql: "select * from merchant_industry where industry_name='$industry_name'"
+    del_sql: "delete from merchant_industry where industry_name='$industry_name'"
+  #修改第一级行业
+  test_modify_first_industry:
+    before_industry_name: 测试0002
+    after_industry_name: 测试0003
+    descript: 自动话测试添加01
+    assert_sql: "select * from merchant_industry where industry_name='$industry_name'"
+    del_sql: "delete from merchant_industry where industry_name='$industry_name'"
+
+  #添加第二级行业
+  test_add_second_industry:
+    first_name: 测试0003
+    second_name: 第二级添加
+    domain: '5555'
+    descript: xxx
+    assert_sql: "select * from merchant_industry where industry_name='$second_name' and parent_id=(select id from merchant_industry where industry_name='$first_name')"
+    select_sql: "select * from merchant_industry where industry_name='$second_name'"
+    del_sql: "delete from merchant_industry where industry_name='$second_name'"
+
+
+  #修改第二级行业
+  test_modify_second_industry:
+    first_name: 测试0003
+    before_second_name: 第二级添加
+    after_second_name: 第二级添加-编辑
+    domain: 'NPE'
+    descript: xxx
+    assert_sql: "select * from merchant_industry where industry_name='$second_name' and parent_id=(select id from merchant_industry where industry_name='$first_name')"
+    select_sql: "select * from merchant_industry where industry_name='$second_name'"
+    del_sql: "delete from merchant_industry where industry_name='$second_name'"
+
+#删除第二级
+  test_cancel_second_industry:
+    first_name: 测试0003
+    second_name: 第二级添加-编辑
+    assert_sql: "select * from merchant_industry where industry_name='$second_name' and parent_id=(select id from merchant_industry where industry_name='$first_name')"
+#删除第一级
+  test_cancel_first_industry:
+    first_name: 测试0003
+    assert_sql: "select * from merchant_industry where industry_name='$first_name'"
+
+  assert_domain:
+    domain_sql: "select id from km_domain where name='$domain'"
+    industry_domain_sql: "select * from merchant_industry where domain_id='$id'"
+    update_industry_domain_sql: "UPDATE merchant_industry set domain_id=NULL where domain_id='$id'"
+
+#商户管理
+merchant:
+  #一级和二级菜单
+  first_menu: 系统管理
+  second_menu: 商户管理
+  search_merchant:
+    merchant_name: 火星公司
+    merchant_status: 启用
+    start_date: "2021-06-27"
+    end_date: "2021-07-02"
+    start_time:
+    end_time:
+      #找到商户名称 断言
+    assert_element: (By.XPATH,'//tr[@class="el-table__row"]/td[2]')
+  test_allocate_industry:
+    merchant_name: 火星公司
+    industry: ({"first_industry":"保险","second_industry":["人寿保险"]},{"first_industry":"产险","second_industry":["车险","名车险"]})
+
+domain:
+  #一级和二级菜单
+  first_menu: 话术管理
+  second_menu: 领域知识库
+  test_search_domain:
+    domain: 标准领域
+    assert_element: (By.XPATH,'//span[@class="el-tree-node__label" and contains(text(),"$domain")]/../..')
+
+  test_search_intention:
+    intention: 价格贵
+    status: 停用
+    start_date: '2021-07-01'
+    end_date: '2021-07-21'
+    start_time:
+    end_time:
+      #获取意图那一栏
+    assert_element: (By.XPATH,'//tr[contains(@class,"el-table__row")]/td[1]/div')
+
+  test_modify_intention:
+    intention: 价格贵
+    question: 你行卡有什么特别突出的优势？
+    answer: 有返现活动哦
+  test_enable_or_disable:
+    intention: 价格贵
+    assert_element: (By.XPATH,'//tr[contains(@class,"el-table__row")]/td[3]/div')
+
+
+
+
+
+
+
+
+
+
+

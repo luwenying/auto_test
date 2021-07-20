@@ -31,6 +31,7 @@ class WebCommon():
         self._driver.get(url)
 
     def locate(self,loc,value=None):
+        self.wait_element_visible(loc, value)
         if isinstance(loc, tuple):
             return self._driver.find_element(*loc)
         elif isinstance(loc,WebElement):
@@ -47,6 +48,7 @@ class WebCommon():
 
 
     def locates(self,loc,value=None):
+        self.wait_element_visible(loc,value)
         if isinstance(loc, tuple):
             return self._driver.find_elements(*loc)
         elif isinstance(loc, WebElement):
@@ -55,7 +57,8 @@ class WebCommon():
         else:
             return self._driver.find_elements(loc, value)
 
-    def click(self,loc,value=None):
+    def click(self,loc,value=None,time=None):
+        self.wait_element_visible(loc,value,time)
         if isinstance(loc, WebElement):
             loc: WebElement
             loc.click()
@@ -64,6 +67,7 @@ class WebCommon():
             element.click()
 
     def input(self,txt,loc,value=None):
+        self.wait_element_visible(loc,value)
         if isinstance(loc,WebElement):
             loc: WebElement
             loc.send_keys(txt)
@@ -71,6 +75,7 @@ class WebCommon():
             self.locate(loc, value).send_keys(txt)
 
     def clear_input(self,txt,loc,value=None):
+        self.wait_element_visible(loc, value)
         if isinstance(loc,WebElement):
             loc: WebElement
             try:
@@ -94,6 +99,7 @@ class WebCommon():
 
 
     def get_txt(self,loc,value=None):
+        self.wait_element_visible(loc,value)
         if isinstance(loc,WebElement):
             loc: WebElement
             return loc.text
@@ -102,6 +108,7 @@ class WebCommon():
             return elem.text
 
     def get_txts(self,loc,value=None):
+        self.wait_element_visible(loc, value)
         elem = self.locates(loc,value)
         txts = [e.text for e in elem]
         return txts
@@ -188,10 +195,18 @@ class WebCommon():
 
 
 
-    def wait_element_visible(self,locator,time:int=None):
+    def wait_element_visible(self,locator,value=None,time:int=None):
         if time==None:
             time = 10
-        WebDriverWait(self._driver,time).until(expected_conditions.visibility_of_element_located(locator))
+        if isinstance(locator,WebElement):
+            WebDriverWait(self._driver, time).until(expected_conditions.visibility_of(locator))
+        if isinstance(locator,tuple):
+            WebDriverWait(self._driver,time).until(expected_conditions.visibility_of_element_located(locator))
+        # else:
+        #     WebDriverWait(self._driver, time).until(expected_conditions.visibility_of(self.locate(locator,value)))
+            # expected_conditions.text_to_be_present_in_element
+
+
 
     def add_cookies(self,path):
         #从文件中加载cookies
@@ -209,6 +224,7 @@ class WebCommon():
 
 
     def get_attr(self,attr,loc,value=None):
+        self.wait_element_visible(loc,value)
         if isinstance(loc,WebElement):
             return loc.get_attribute(attr)
         else:

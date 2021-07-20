@@ -22,3 +22,5 @@ enable_confirm_element: (By.XPATH,'//div[@class="el-message-box__btns"]//span[te
 #同步领域
 domain_element: (By.XPATH,'//span[text()="$domain"]')
 synchronize_domain: (By.XPATH,'//span[text()="同步领域意图"]')
+#详情
+detail_element: (By.XPATH,'//tr[contains(@class,"el-table__row")]//span[text()="详情"]')

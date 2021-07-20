@@ -27,7 +27,7 @@ class MainMenu(WebCommon):
     def _left_second_menu_click(self, second_menu):
         """点击第二级菜单"""
         second_menu_element = yamlstr_to_tuple(data["second_menu_element"].replace("$second_menu", second_menu))
-        print(f"二级菜单为：{second_menu_element}")
+        # print(f"二级菜单为：{second_menu_element}")
         self.wait_click(second_menu_element)
         if second_menu == "领域知识库":
             return DomainManage(self._driver)

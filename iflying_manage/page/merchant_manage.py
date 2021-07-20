@@ -44,7 +44,6 @@ class MerchantManage(WebCommon):
     def search_merchant(self,merchant_name=None,mechant_status=None,start_date=None,end_date=None,start_time=None,end_time=None):
         merchant_name_element = yamlstr_to_tuple(data["merchant_name_element"])
         merchant_status_frame_element = yamlstr_to_tuple(data["merchant_status_frame_element"])
-
         search_mechant_btn_element = yamlstr_to_tuple(data["search_mechant_btn_element"])
         if merchant_name:
             self.wait_input(merchant_name,merchant_name_element)
@@ -79,6 +78,20 @@ class MerchantManage(WebCommon):
 
         self.click(self.locates(cancel_allocate_frame_element)[-1])
         self.wait_click(allocate_confirm_element)
+
+
+    def get_industry_detail(self):
+        detail_btn_element = yamlstr_to_tuple(data["detail_btn_element"])
+        industry_detail_element = yamlstr_to_tuple(data["industry_detail_element"])
+        self.wait_click(detail_btn_element)
+        self.wait_element_visible(industry_detail_element)
+        # industry_detail_elements = self.locates(industry_detail_element)
+        industry_details = self.get_txts(industry_detail_element)
+        # for industry_detail_element in industry_detail_elements:
+        #     industry_detail = self.get_txt(industry_detail_element)
+        #     industry_details.append(industry_detail)
+        return industry_details
+
 
 
 

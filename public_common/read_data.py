@@ -1,15 +1,16 @@
 #coding:utf-8
 import json
+import time
 from string import Template
 
 import pymysql
 import yaml
-from biz.get_path import *
+from iflying_manage.get_path import *
+from public_common.get_logger import get_logger
 from selenium.webdriver.common.by import By
 
-from iflying.get_path import *
 
-
+logger = get_logger()
 def get_yaml_data(file_path):
     # menu = "商户管理"
     with open(file_path,"r",encoding="utf-8") as f:
@@ -47,10 +48,11 @@ def con_mysql(env_name,key,sql):
     key:insert 插入
     key：delete或者del:删除
     """
+    # print(db_config)
     data = get_yaml_data(db_config)[env_name]
     env = data["default"]
     db_data = data[env]
-    print("数据库环境是：",env)
+    # print("数据库环境是：",env)
     host = db_data["host"]
     username = db_data["username"]
     password = db_data["password"]
@@ -70,16 +72,28 @@ def con_mysql(env_name,key,sql):
     cur.close()
     con.close()
 
+def generate_screenshot_dirname():
+    dirname = time.strftime("%Y-%m-%d",time.localtime())
+    dirname_path = os.path.dirname(os.path.dirname(__file__))+"/iflying_manage/screenshot/"+dirname
+    try:
+        if not os.path.exists(dirname):
+            os.makedirs(dirname_path)
+        logger.info(f"{dirname_path}不存在，创建成功")
+    except Exception:
+        logger.info(f"{dirname_path}已存在，无需创建")
+        return dirname_path
 
 
 
 
 if __name__=="__main__":
-    sql = "select * from biz_script_recommend_relation where standard_script_name='$question' and merchant_id='1924093577040625664'".replace("$question","你好呀")
-    sql2 = "select * from merchant_role where role_name='测试00004'"
-    res = con_mysql("iflying","selectone",sql)["content_status"]
-    print(res)
-
+    # sql = "select * from biz_script_recommend_relation where standard_script_name='$question' and merchant_id='1924093577040625664'".replace("$question","你好呀")
+    # sql2 = "select id from km_domain where name='5555'"
+    # res = con_mysql("km","selectone",sql2)
+    # print(res)
+    # data = get_yaml_data(db_config)
+    # print(data)
+    generate_dir_name()
 
 
 
